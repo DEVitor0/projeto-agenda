@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto Agenda</title>
-  </head>
-  <body>
-    <h1>Eu fui renderizado</h1>
-    <script src="/assets/js/bundle.js"></script>
-  </body>
-</html>
+<%- include('includes/head') %> <%- include('includes/nav') %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Agenda</h1>
+      <p class="text-center lead">Seus contatos estão aqui</p>
+
+      <div class="responsive-table">
+        <table class="table my-3">
+          <tr>
+            <td>Vitor</td>
+            <td>Moreira</td>
+            <td>12981146940</td>
+            <td>vitormoreira6940@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Vitor</td>
+            <td>Moreira</td>
+            <td>12981146940</td>
+            <td>vitormoreira6940@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Vitor</td>
+            <td>Moreira</td>
+            <td>12981146940</td>
+            <td>vitormoreira6940@gmail.com</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<%- include('includes/footer') %>
