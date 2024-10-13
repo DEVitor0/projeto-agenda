@@ -18,38 +18,38 @@
 
 ## Características
 
-- **Segurança Avançada**:
+**Segurança Avançada**:
 
   - Implementação de **CSRF (Cross-Site Request Forgery)** para prevenir ataques de falsificação de requisições.
   - Uso de **Helmet** para configuração segura dos cabeçalhos HTTP, protegendo contra vulnerabilidades comuns.
   - Hash de senhas com **Bcryptjs**, garantindo armazenamento seguro das credenciais dos usuários.
   - Gerenciamento seguro de **cookies** para manter sessões de usuário protegidas.
 
-- **Banco de Dados NoSQL**:
+**Banco de Dados NoSQL**:
 
   - O **MongoDB** é usado para armazenar e gerenciar os dados dos contatos de forma escalável e flexível.
 
-- **Validação de Formulários**:
+**Validação de Formulários**:
 
   - Sistema de validação de entradas do usuário para garantir a integridade e segurança dos dados.
 
-- **Renderização Dinâmica**:
+**Renderização Dinâmica**:
 
   - Com **EJS**, as páginas são renderizadas dinamicamente no servidor, permitindo atualizações em tempo real e uma interface interativa.
 
-- **Controle de Versão com Git**:
+**Controle de Versão com Git**:
 
   - Todo o desenvolvimento é versionado com **Git**, garantindo histórico e controle total das alterações realizadas.
 
-- **Performance**:
+**Performance**:
 
   - O uso de **Webpack** para empacotamento e minificação do código garante um carregamento rápido e eficiente da aplicação.
 
-- **Responsividade**:
+**Responsividade**:
 
   - A interface é desenvolvida com **CSS** e **Bootstrap**, garantindo que a aplicação se adapte a diferentes dispositivos e tamanhos de tela, proporcionando uma experiência consistente em desktops, tablets e smartphones.
 
-- **Facilidade de Manutenção**:
+**Facilidade de Manutenção**:
   - A aplicação segue um padrão modular com a arquitetura **MVC**, facilitando a manutenção, expansão e testes do sistema.
 
 ## Imagens do projeto
