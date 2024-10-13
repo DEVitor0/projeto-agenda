@@ -1,37 +1,63 @@
-<%- include('includes/head') %> <%- include('includes/nav') %>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
+<%- include('includes/head') %> <%- include('includes/nav') %> <%-
+include('includes/style')%>
 
-    <div class="col-lg-8 my-3">
-      <h1 class="text-center">Agenda</h1>
-      <p class="text-center lead">Seus contatos estão aqui</p>
-
-      <%- include('includes/messages')%> <% if(contatos.length > 0) {%>
-      <div class="responsive-table">
-        <table class="table my-3">
-          <% contatos.forEach(contato => { %>
-          <tr>
-            <td><%= contato.nome %></td>
-            <td><%= contato.sobrenome %></td>
-            <td><%= contato.telefone %></td>
-            <td><%= contato.email %></td>
-            <td><a href="/contato/index/<%= contato._id%>">Editar</a></td>
-            <td>
-              <a class="text-danger" href="/contato/delete/<%= contato._id%>"
-                >Excluir</a
-              >
-            </td>
-          </tr>
-          <%}) %>
-        </table>
-      </div>
-      <%} else {%>
-      <p class="text-center lead">Não existem contatos em sua agenda</p>
-      <% }%>
-    </div>
-
-    <div class="col-lg-2"></div>
+<div class="container my-5">
+  <!-- Hero Section Minimalista -->
+  <div class="text-center py-4">
+    <h1 class="display-4" style="font-weight: 300; color: #333">Agenda</h1>
+    <p class="lead" style="color: #666">Seus contatos estão organizados aqui</p>
   </div>
+
+  <%- include('includes/messages')%> <% if(contatos.length > 0) { %>
+  <div class="table-responsive">
+    <table
+      class="table"
+      style="border-collapse: separate; border-spacing: 0 1rem"
+    >
+      <thead>
+        <tr style="border-bottom: 2px solid #ddd">
+          <th style="font-weight: 500; color: #555">Nome</th>
+          <th style="font-weight: 500; color: #555">Sobrenome</th>
+          <th style="font-weight: 500; color: #555">Telefone</th>
+          <th style="font-weight: 500; color: #555">Email</th>
+          <th style="font-weight: 500; color: #555">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% contatos.forEach(contato => { %>
+        <tr
+          style="background-color: #f9f9f9; border-radius: 8px; padding: 1rem"
+        >
+          <td><%= contato.nome %></td>
+          <td><%= contato.sobrenome %></td>
+          <td><%= contato.telefone %></td>
+          <td><%= contato.email %></td>
+          <td>
+            <a
+              href="/contato/index/<%= contato._id%>"
+              class="btn btn-outline-dark btn-sm mx-1"
+              style="border-radius: 5px"
+            >
+              Editar
+            </a>
+            <a
+              href="/contato/delete/<%= contato._id%>"
+              class="btn btn-outline-danger btn-sm mx-1"
+              style="border-radius: 5px"
+            >
+              Excluir
+            </a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <% } else { %>
+  <div class="text-center my-5" style="color: #999">
+    <p class="lead">Nenhum contato disponível.</p>
+  </div>
+  <% } %>
 </div>
+
 <%- include('includes/footer') %>

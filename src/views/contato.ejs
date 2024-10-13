@@ -1,56 +1,113 @@
-<%- include('includes/head') %> <%- include('includes/nav') %>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
+<%- include('includes/head') %> 
+<%- include('includes/nav') %>
+<%- include('includes/style') %>
 
-    <div class="col-lg-8 my-3">
-      <h1 class="text-center">Contato</h1>
-      <p class="text-center lead">Crie ou edite seu contato abaixo</p>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <!-- Título e subtítulo centralizados -->
+      <h1 class="text-center" style="font-weight: 300; color: #333">
+        Contato
+      </h1>
+      <p class="text-center lead" style="color: #666">
+        Crie ou edite seu contato abaixo
+      </p>
 
-      <%- include('includes/messages')%>
-      <% if(contato.id) {%>
-      <form action="/contato/index/<%= contato._id %>" method="POST">
-      <% } else {%>
-      <form action="/contato/register" method="POST">
+      <%- include('includes/messages') %>
+
+      <!-- Formulário de Contato -->
+      <% if(contato.id) { %>
+        <form action="/contato/index/<%= contato._id %>" method="POST">
+      <% } else { %>
+        <form action="/contato/register" method="POST">
       <% } %>
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
 
-        <div class="form-group">
-          <label>Nome</label>
-          <input value="<%= contato.nome %>" type="text" class="form-control" name="nome" />
+        <!-- Nome -->
+        <div class="form-group mb-4">
+          <label style="color: #555">Nome</label>
+          <input
+            value="<%= contato.nome %>"
+            type="text"
+            class="form-control"
+            name="nome"
+            style="
+              border-radius: 5px;
+              padding: 10px;
+              border: 1px solid #ddd;
+            "
+            required
+          />
         </div>
-        <div class="form-group">
-          <label>Sobrenome</label>
+
+        <!-- Sobrenome -->
+        <div class="form-group mb-4">
+          <label style="color: #555">Sobrenome</label>
           <input
             value="<%= contato.sobrenome %>"
             type="text"
             class="form-control"
             name="sobrenome"
+            style="
+              border-radius: 5px;
+              padding: 10px;
+              border: 1px solid #ddd;
+            "
+            required
           />
         </div>
-        <div class="form-group">
-          <label>Email</label>
+
+        <!-- Email -->
+        <div class="form-group mb-4">
+          <label style="color: #555">Email</label>
           <input
             value="<%= contato.email %>"
             type="email"
             class="form-control"
             name="email"
+            style="
+              border-radius: 5px;
+              padding: 10px;
+              border: 1px solid #ddd;
+            "
+            required
           />
         </div>
-        <div class="form-group">
-          <label>Telefone</label>
+
+        <!-- Telefone -->
+        <div class="form-group mb-4">
+          <label style="color: #555">Telefone</label>
           <input
             value="<%= contato.telefone %>"
             type="text"
             class="form-control"
             name="telefone"
+            style="
+              border-radius: 5px;
+              padding: 10px;
+              border: 1px solid #ddd;
+            "
+            required
           />
         </div>
-        <button type="tel" class="btn btn-primary">Salvar</button>
+
+        <!-- Botão Salvar -->
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          style="
+            border-radius: 5px;
+            background-color: #6c63ff;
+            border: none;
+            padding: 10px 0;
+            font-weight: 500;
+          "
+        >
+          Salvar
+        </button>
       </form>
     </div>
-
-    <div class="col-lg-2"></div>
   </div>
 </div>
+
 <%- include('includes/footer') %>
